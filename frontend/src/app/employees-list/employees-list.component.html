@@ -1,0 +1,65 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mobile No</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor=" let user of empall;">
+      <th scope="row">{{user.id}}</th>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.mobile}}</td>
+      <td>{{user.status}}</td>
+      <td>
+        <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editEmployee" (click)="editEmployee(employee)">Edit</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteEmployee(user.id)">Delete</button>
+      </td>
+
+    </tr>
+    <tr>
+  </tbody>
+</table>
+
+ <!-- Edit employee modal -->
+ <div class="modal fade" id="editEmployee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit employee details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <form [formGroup]="empDetail">
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name </label>
+                  <input type="text" formControlName="name" class="form-control" id="name" aria-describedby="emailHelp">
+                </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email </label>
+                <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Mobile</label>
+                  <input type="text" formControlName="salary" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-success" (click)="updateEmployee()" data-bs-dismiss="modal">Update </button>
+                </div>
+            </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

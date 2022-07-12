@@ -1,0 +1,34 @@
+<p>employees-create works!</p>
+<form [formGroup]="empForm" (ngSubmit)="submit()">
+  <div class="alert alert-danger" role="alert">
+    <strong>{{errormsg}}</strong>
+    </div>
+    <div class="alert alert-success" role="alert">
+      <strong>{{successmsg}}</strong>
+      </div>
+  <div class="form-group">
+    <input type="number" class="form-control" formControlName="id" id="Id" aria-describedby="emailHelp" placeholder="Enter Id in number only">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" formControlName="email"id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="Username">Username</label>
+    <input type="text" class="form-control" id="Username" formControlName="username" aria-describedby="emailHelp" placeholder="Enter username">
+  </div>
+    <div class="form-group">
+      <label for="creationDate">createdAt</label>
+      <input type="date" class="form-control" id="creationDate" formControlName="createdAt"aria-describedby="emailHelp" placeholder="Enter date">
+    </div>
+      <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
